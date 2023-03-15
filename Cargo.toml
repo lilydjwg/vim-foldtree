@@ -1,0 +1,19 @@
+[package]
+name = "vim-foldtree"
+version = "0.1.0"
+edition = "2021"
+authors = ["lilydjwg <lilydjwg@gmail.com>"]
+description = "Fold ASCII tree graphs in Vim"
+license = "BSD-3-Clause"
+repository = "https://github.com/lilydjwg/vim-foldtree"
+keywords = ["vim", "tree"]
+categories = ["command-line-utilities", "text-editors"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+smartstring = "1.0.1"
+regex = "1.5.6"
+
+[profile.release]
+lto = true
