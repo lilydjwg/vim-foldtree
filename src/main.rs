@@ -30,7 +30,7 @@ fn main() {
       let distance = (tree_str.len() - point_up.len()) as u32;
       line_kinds.push(LineKind::PrevAt(end - distance));
     } else {
-      let n = line.len() - line.trim_start_matches(&[' ', ' ', '│']).len();
+      let n = line.len() - line.trim_start_matches([' ', ' ', '│']).len();
       if n > 0 {
         line_kinds.push(LineKind::IndentedText(n as u32));
       } else {
@@ -109,7 +109,7 @@ fn main() {
 
   let mut stdout = BufWriter::new(stdout().lock());
   for f in folds {
-    if let Err(_) = stdout.write_all(f.as_bytes()) {
+    if stdout.write_all(f.as_bytes()).is_err() {
       break;
     }
   }
