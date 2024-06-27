@@ -66,12 +66,12 @@ fn main() {
           },
           Ordering::Greater => {
             // closing a substree
-            writeln!(s, "<{}", level_positions.len()).unwrap();
             let pos = match level_positions.binary_search(&b) {
               Ok(p) => p,
               Err(p) => p,
             };
             level_positions.truncate(pos + 1);
+            writeln!(s, "<{}", pos + 2).unwrap();
           },
           Ordering::Equal => {
             // keep same
